@@ -99,7 +99,7 @@ const SpecialtyStage = () => {
           Specimen {current.code} / 04
         </div>
         <div className="pointer-events-none absolute bottom-0 right-0 font-mono text-[10px] uppercase tracking-[0.25em] text-white/35">
-          Drag cursor to inspect
+          Move cursor to inspect
         </div>
       </div>
 
