@@ -271,7 +271,6 @@ export function mountSpecialtyScene(container: HTMLElement, opts: { reduceMotion
         if (o.userData.spin && !opts.reduceMotion) o.rotation.z += o.userData.spin * dt;
       });
     }
-    if (key === groups.eye.children[0]) return;
     renderer.render(scene, camera);
   };
   tick();
