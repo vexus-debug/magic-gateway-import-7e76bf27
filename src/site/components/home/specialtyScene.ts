@@ -227,7 +227,7 @@ export function mountSpecialtyScene(container: HTMLElement, opts: { reduceMotion
     renderer.domElement.style.width = "100%";
     renderer.domElement.style.height = "100%";
     camera.aspect = w / h;
-    camera.position.z = w < 500 ? 8 : 6.5;
+    camera.position.z = w < 500 ? 5.6 : 6.5;
     camera.updateProjectionMatrix();
   };
   const ro = new ResizeObserver(resize);

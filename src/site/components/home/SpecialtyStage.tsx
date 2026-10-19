@@ -81,8 +81,8 @@ const SpecialtyStage = () => {
   const current = SPECIALTIES.find((s) => s.key === active)!;
 
   return (
-    <div className="relative mt-16 grid gap-8 lg:grid-cols-12 lg:items-center">
-      <div className="relative order-1 aspect-square w-full lg:order-2 lg:col-span-7 lg:aspect-[5/4]">
+    <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] lg:mt-16 lg:grid lg:grid-cols-12 lg:items-center lg:gap-8 lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent">
+      <div className="relative h-64 w-full sm:h-80 lg:order-2 lg:col-span-7 lg:h-auto lg:aspect-[5/4]">
         <div
           aria-hidden
           className="absolute inset-[12%] rounded-full bg-[hsl(var(--medical-teal))]/10 blur-3xl"
@@ -95,16 +95,21 @@ const SpecialtyStage = () => {
         >
           Loading model
         </motion.div>
-        <div className="pointer-events-none absolute left-0 top-0 font-mono text-[10px] uppercase tracking-[0.25em] text-white/35">
+        <div className="pointer-events-none absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.25em] text-white/35 lg:left-0 lg:top-0">
           Specimen {current.code} / 04
         </div>
-        <div className="pointer-events-none absolute bottom-0 right-0 font-mono text-[10px] uppercase tracking-[0.25em] text-white/35">
-          Move cursor to inspect
+        <div className="pointer-events-none absolute bottom-3 right-4 font-mono text-[10px] uppercase tracking-[0.25em] text-white/35 lg:bottom-0 lg:right-0">
+          <span className="lg:hidden">Drag to inspect</span>
+          <span className="hidden lg:inline">Move cursor to inspect</span>
         </div>
       </div>
 
-      <div className="order-2 lg:order-1 lg:col-span-5">
-        <div role="tablist" aria-label="Choose a specialty" className="border-t border-white/10">
+      <div className="p-4 pt-0 lg:order-1 lg:col-span-5 lg:p-0">
+        <div
+          role="tablist"
+          aria-label="Choose a specialty"
+          className="grid grid-cols-4 gap-1 rounded-xl border border-white/10 bg-black/20 p-1 lg:block lg:rounded-none lg:border-0 lg:border-t lg:bg-transparent lg:p-0"
+        >
           {SPECIALTIES.map((s) => {
             const on = s.key === active;
             return (
@@ -120,18 +125,25 @@ const SpecialtyStage = () => {
                   setPaused(true);
                   setActive(s.key);
                 }}
-                className="group relative flex w-full items-baseline gap-5 border-b border-white/10 py-4 text-left"
+                className="group relative flex w-full flex-col items-center gap-0.5 rounded-lg px-1 py-2 text-center lg:flex-row lg:items-baseline lg:gap-5 lg:rounded-none lg:border-b lg:border-white/10 lg:px-0 lg:py-4 lg:text-left"
               >
-                <span className={`font-mono text-xs transition-colors ${on ? "text-[hsl(var(--medical-teal))]" : "text-white/30"}`}>
+                {on && (
+                  <motion.span
+                    layoutId="specialty-pill"
+                    className="absolute inset-0 rounded-lg bg-white/10 lg:hidden"
+                  />
+                )}
+                <span className={`relative font-mono text-[10px] transition-colors lg:text-xs ${on ? "text-[hsl(var(--medical-teal))]" : "text-white/30"}`}>
                   {s.code}
                 </span>
-                <span className={`text-xl transition-colors md:text-2xl ${on ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
-                  {s.label}
+                <span className={`relative text-xs transition-colors lg:text-2xl ${on ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
+                  <span className="lg:hidden">{s.key === "general" ? "General" : s.key === "eye" ? "Eye" : s.key === "lab" ? "Lab" : s.label}</span>
+                  <span className="hidden lg:inline">{s.label}</span>
                 </span>
                 {on && (
                   <motion.span
                     layoutId="specialty-bar"
-                    className="absolute bottom-[-1px] left-0 h-px w-full bg-[hsl(var(--medical-teal))]"
+                    className="absolute bottom-[-1px] left-0 hidden h-px w-full bg-[hsl(var(--medical-teal))] lg:block"
                   />
                 )}
               </button>
@@ -139,7 +151,7 @@ const SpecialtyStage = () => {
           })}
         </div>
 
-        <div className="relative mt-6 min-h-[9rem]">
+        <div className="relative mt-4 min-h-[8rem] lg:mt-6 lg:min-h-[9rem]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.key}
