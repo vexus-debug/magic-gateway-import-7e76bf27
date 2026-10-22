@@ -8,11 +8,6 @@ import SpecialtyStage from "./SpecialtyStage";
 
 const dashboardScreenshot = dashboardAsset.url;
 
-const proofPoints = [
-  { value: "Specialized", label: "Clinical systems built for each field of care" },
-  { value: "Zero", label: "Workarounds, manual notes or spreadsheets" },
-  { value: "Yours", label: "Built around the workflow your specialty runs on" },
-];
 
 const HeroSection = () => {
   const reduceMotion = useReducedMotion();
