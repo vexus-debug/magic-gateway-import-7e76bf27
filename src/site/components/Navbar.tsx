@@ -33,6 +33,7 @@ const mobileGroups = [
   {
     label: "Resources",
     items: [
+      { label: "Articles", to: "/articles" },
       { label: "Privacy Policy", to: "/privacy" },
       { label: "Terms of Service", to: "/terms" },
       { label: "Cookie Policy", to: "/cookies" },
@@ -43,6 +44,7 @@ const mobileGroups = [
 const mobileDirect = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+  { label: "Articles", to: "/articles" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -50,6 +52,7 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "Industries", to: "/industries" },
   { label: "Tutorials", to: "/tutorials" },
+  { label: "Articles", to: "/articles" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
   { label: "Privacy Policy", to: "/privacy" },
