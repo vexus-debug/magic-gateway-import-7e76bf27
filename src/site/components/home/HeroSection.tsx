@@ -89,27 +89,6 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          <motion.dl
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="lg:col-span-5"
-          >
-            <div className="divide-y divide-white/10 border-y border-white/10">
-              {proofPoints.map((point, i) => (
-                <motion.div
-                  key={point.value}
-                  initial={{ opacity: 0, x: reduceMotion ? 0 : 24 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}
-                  className="flex items-baseline gap-5 py-5"
-                >
-                  <dt className="w-32 shrink-0 text-xl text-white">{point.value}</dt>
-                  <dd className="text-sm leading-relaxed text-white/50">{point.label}</dd>
-                </motion.div>
-              ))}
-            </div>
-          </motion.dl>
         </div>
 
         <SpecialtyStage />
