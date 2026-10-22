@@ -29,6 +29,8 @@ import SiteTutorials from "./site/pages/Tutorials";
 import SiteTutorialClinicType from "./site/pages/TutorialClinicType";
 import SiteTutorialSection from "./site/pages/TutorialSection";
 import SiteTutorialDetail from "./site/pages/TutorialDetail";
+import SiteArticles from "./site/pages/Articles";
+import SiteArticleDetail from "./site/pages/ArticleDetail";
 import SiteScrollToTop from "./site/components/ScrollToTop";
 
 // Dashboard pages
@@ -230,6 +232,9 @@ const App = () => (
             <Route path="/terms" element={<SiteTerms />} />
             <Route path="/cookies" element={<SiteCookies />} />
             <Route path="/tutorials" element={<SiteTutorials />} />
+            <Route path="/articles" element={<SiteArticles />} />
+            <Route path="/articles/category/:category" element={<SiteArticles />} />
+            <Route path="/articles/:slug" element={<SiteArticleDetail />} />
             <Route path="/tutorials/:clinicType" element={<SiteTutorialClinicType />} />
             <Route path="/tutorials/:clinicType/:section" element={<SiteTutorialSection />} />
             <Route path="/tutorials/:clinicType/:section/:tutorial" element={<SiteTutorialDetail />} />
