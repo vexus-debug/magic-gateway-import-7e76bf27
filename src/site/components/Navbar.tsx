@@ -54,10 +54,7 @@ const navLinks = [
   { label: "Tutorials", to: "/tutorials" },
   { label: "Articles", to: "/articles" },
   { label: "About", to: "/about" },
-  { label: "Articles", to: "/articles" },
   { label: "Contact", to: "/contact" },
-  { label: "Articles", to: "/articles" },
-  { label: "Privacy Policy", to: "/privacy" },
   { label: "Terms of Service", to: "/terms" },
 ];
 
