@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import dashboardAsset from "@/assets/current-dashboard/dental-dashboard.png.asset.json";
-import SpecialtyStage from "./SpecialtyStage";
 
 const dashboardScreenshot = dashboardAsset.url;
 
@@ -111,8 +110,6 @@ const HeroSection = () => {
             </div>
           </motion.dl>
         </div>
-
-        <SpecialtyStage />
 
         {/* Floating dashboard plane */}
         <motion.figure
